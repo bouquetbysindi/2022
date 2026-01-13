@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Bouquet Bysindi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Sama */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px;
+        }
+        .auth-card {
+            background: white; padding: 40px; width: 100%; max-width: 450px; 
+            border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center;
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #333; margin-bottom: 25px; display: inline-block; }
+        .logo i { color: #D61C4E; }
+        h2 { font-family: 'Playfair Display', serif; color: #222; margin-bottom: 10px; }
+        p.subtitle { color: #666; font-size: 14px; margin-bottom: 25px; }
+        .input-group { text-align: left; margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 13px; font-weight: 500; color: #555; margin-bottom: 6px; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px;
+            font-family: 'Poppins', sans-serif; background-color: #fff;
+        }
+        .input-group input:focus { outline: none; border-color: #D61C4E; }
+        .btn-submit {
+            width: 100%; padding: 12px; background-color: #D61C4E; color: white; border: none;
+            border-radius: 50px; font-weight: 600; cursor: pointer; transition: background 0.3s;
+            margin-top: 15px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .btn-submit:hover { background-color: #b0163f; }
+        .links { margin-top: 20px; font-size: 13px; }
+        .links a { color: #D61C4E; text-decoration: none; font-weight: 500; }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card">
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo"><i class="fa-solid fa-heart"></i> Bouquet Bysindi</div>
+        </a>
+        
+        <h2>Create Account</h2>
+        <p class="subtitle">Join us to find the perfect bouquet</p>
+
+        <form id="registerForm">
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="regName" placeholder="Sindi Putri" required>
+            </div>
+
+            <div class="input-group">
+                <label>Register as...</label>
+                <select id="regType">
+                    <option>Customer (Buying for Gifts)</option>
+                    <option>Reseller / Dropshipper</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="regEmail" placeholder="example@mail.com" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="regPassword" placeholder="Create a password" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Register Now</button>
+        </form>
+
+        <div class="links">
+            <p>Already have an account? <a href="join.html">Log In</a></p>
+        </div>
+        
+        <br>
+        <a href="index.html" style="font-size: 12px; color: #999; text-decoration: none;">← Back to Home</a>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const type = document.getElementById('regType').value;
+
+            // Simpan Data
+            if (localStorage.getItem(email)) {
+                alert("Email sudah terdaftar!");
+            } else {
+                const userData = { name: name, password: password, type: type };
+                localStorage.setItem(email, JSON.stringify(userData));
+                
+                alert("Pendaftaran Berhasil! Silakan Login.");
+                window.location.href = "join.html"; // Pindah ke halaman Login (join.html)
+            }
+        });
+    </script>
+
+</body>
+</html>
