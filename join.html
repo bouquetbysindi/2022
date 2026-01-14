@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Copy style dari sebelumnya */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); height: 100vh; display: flex; justify-content: center; align-items: center; }
         .auth-card { background: white; padding: 40px; width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; }
@@ -61,56 +60,73 @@
         <a href="index.html" style="font-size: 12px; color: #999; text-decoration: none; display:block; margin-top:30px;">← Back to Home</a>
     </div>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+   <script type="module">
+    // 1. Import Library Firebase (Wajib)
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            const errorAlert = document.getElementById('errorAlert');
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAOcC8fQxV-hkY-flVrLnBNyw6tWb-zfB0",
+      authDomain: "bouquet-6e6a5.firebaseapp.com",
+      projectId: "bouquet-6e6a5",
+      storageBucket: "bouquet-6e6a5.firebasestorage.app",
+      messagingSenderId: "423899480742",
+      appId: "1:423899480742:web:795f89c9c752b5da7a2a67",
+      measurementId: "G-R081Z7B7MG"
+    };
 
-            // 1. Cek apakah email terdaftar di database browser
-            const storedData = localStorage.getItem(email);
+    // 3. Mulai Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-            if (storedData) {
-                const userData = JSON.parse(storedData);
+    // 4. Logika Login (Saat Tombol Sign In Ditekan)
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+        e.preventDefault(); // Mencegah reload halaman
+        
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+        const btnLogin = document.querySelector('.btn-submit');
+        const errorAlert = document.getElementById('errorAlert');
+
+        // Ubah tombol jadi Loading
+        btnLogin.innerText = "Checking...";
+        btnLogin.disabled = true;
+
+        // Cek ke Google Firebase
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // --- BERHASIL LOGIN ---
+                const user = userCredential.user;
+                const namaUser = user.displayName || "Pelanggan"; // Ambil nama dari server
+
+                // Simpan status login agar halaman home tahu
+                sessionStorage.setItem('isLoggedIn', 'true');
+                sessionStorage.setItem('userName', namaUser);
+
+                alert("Login Berhasil! Selamat datang, " + namaUser);
+                window.location.href = "index.html"; // Pindah ke Home
+            })
+            .catch((error) => {
+                // --- GAGAL LOGIN ---
+                btnLogin.innerText = "Sign In";
+                btnLogin.disabled = false;
                 
-                // 2. Cek apakah Password cocok
-                if (password === userData.password) {
-                    
-                    // --- [PENTING] SIMPAN STATUS LOGIN KE SESSION ---
-                    // Ini yang membuat index.html tahu kalau Anda sudah login
-                    sessionStorage.setItem('isLoggedIn', 'true'); 
-                    sessionStorage.setItem('userName', userData.name);
-                    // ------------------------------------------------
-
-                    alert("Login Berhasil! Halo " + userData.name);
-                    
-                    // 3. Pindah ke halaman utama
-                    window.location.href = "index.html"; 
-
-                } else {
-                    errorAlert.style.display = 'block';
-                    errorAlert.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Password salah!';
-                }
-            } else {
                 errorAlert.style.display = 'block';
-                errorAlert.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Akun belum terdaftar. Silakan Sign Up.';
-            }
-        });
-
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyAOcC8fQxV-hkY-flVrLnBNyw6tWb-zfB0",
-          authDomain: "bouquet-6e6a5.firebaseapp.com",
-          projectId: "bouquet-6e6a5",
-          storageBucket: "bouquet-6e6a5.firebasestorage.app",
-          messagingSenderId: "423899480742",
-          appId: "1:423899480742:web:795f89c9c752b5da7a2a67",
-          measurementId: "G-R081Z7B7MG"
-        };
-    </script>
+                
+                // Pesan Error yang lebih ramah
+                if (error.code === 'auth/invalid-credential' || error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+                    errorAlert.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Email atau Password salah!';
+                } else if (error.code === 'auth/too-many-requests') {
+                    errorAlert.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Terlalu banyak mencoba. Tunggu sebentar.';
+                } else {
+                    errorAlert.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Error: ' + error.message;
+                }
+            });
+    });
+</script>
 
 </body>
 
 </html>
+
