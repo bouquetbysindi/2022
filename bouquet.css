@@ -625,6 +625,86 @@
             border: 0;
         }
 
+/* Container Utama */
+.container-contact-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* Grid Atas (Info vs Pembayaran) */
+.contact-top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi 2 kolom sama besar */
+    gap: 60px;
+    align-items: start;
+}
+
+/* Styling Kartu Pembayaran */
+.payment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.pay-card {
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.pay-card:hover {
+    border-color: #D61C4E;
+    background: #fffafa;
+}
+
+.pay-card img {
+    margin-bottom: 10px;
+    filter: grayscale(20%);
+}
+
+.pay-card p {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.4;
+}
+
+/* Styling Form Bawah (Full Width) */
+.contact-bottom-form {
+    width: 100%;
+}
+
+.contact-form-wrapper {
+    max-width: 100% !important; /* Memaksa lebar penuh */
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+}
+
+/* Membuat Input Nama & WA Berjajar di Desktop */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Penyesuaian Responsif (Mobile) */
+@media (max-width: 900px) {
+    .contact-top-grid {
+        grid-template-columns: 1fr; /* Menjadi tumpuk di HP */
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .payment-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
         /* --- Kolom Kanan (Form) --- */
         .contact-form-wrapper {
             flex: 1;
@@ -765,4 +845,5 @@
     background-color: #ffe6e6;
     color: #D61C4E;
     border-color: #D61C4E;
+
 }
