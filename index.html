@@ -280,7 +280,7 @@
     </div>
 </section>
 
-<div id="testiModal" class="testi-modal" onclick="closeModal()">
+<div id="testiModal" class="testi-modal" onclick="closeModal()" style="display: none;">
     <span class="close-modal">&times;</span>
     <img class="modal-content" id="imgFull">
 </div>
@@ -404,24 +404,19 @@
         window.open(urlWA, '_blank');
     }
 
-    // Fungsi untuk membuka foto
-function openModal(imgSrc) {
+    function openModal(imgSrc) {
     const modal = document.getElementById("testiModal");
     const modalImg = document.getElementById("imgFull");
     
-    modal.style.display = "block";
+    modal.style.display = "flex"; // Gunakan flex agar gambar di tengah secara vertikal & horizontal
     modalImg.src = imgSrc;
     
-    // Mencegah scroll pada background saat modal buka
     document.body.style.overflow = "hidden";
 }
 
-// Fungsi untuk menutup foto
 function closeModal() {
     const modal = document.getElementById("testiModal");
     modal.style.display = "none";
-    
-    // Mengembalikan scroll
     document.body.style.overflow = "auto";
 }
 </script>
@@ -429,6 +424,7 @@ function closeModal() {
 </body>
 
 </html>
+
 
 
 
