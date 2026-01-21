@@ -10,86 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="bouquet.css">
-
-    <style>
-        /* CSS TAMBAHAN UNTUK TESTIMONI SCROLL */
-        .testi-section {
-            padding: 80px 0;
-            background-color: #fffafb; /* Warna soft pink sangat muda */
-            overflow: hidden;
-        }
-
-        .testi-slider {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 20px 5% 40px 5%;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE/Edge */
-        }
-
-        .testi-slider::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
-        }
-
-        .testi-card {
-            min-width: 280px;
-            max-width: 280px;
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(214, 28, 78, 0.1);
-            scroll-snap-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
-        }
-
-        .testi-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(214, 28, 78, 0.2);
-        }
-
-        .testi-card img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .testi-info {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .stars {
-            color: #FFD700;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .testi-info p {
-            font-style: italic;
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        .testi-info b {
-            display: block;
-            margin-top: 10px;
-            color: #D61C4E;
-            font-size: 13px;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 768px) {
-            .testi-card {
-                min-width: 250px;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -119,21 +39,23 @@
                 </div>
             </li>
             <li><a href="#order">How to order</a></li>
-            <li><a href="#testi">Testimoni</a></li> <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#testi">Testimoni</a></li>
         </ul>
 
+            
         <div class="nav-buttons" id="guest-nav">
-            <a href="join.html" class="signin-btn">Log In</a>
-            <a href="signin.html" class="join-btn">Sign Up</a>
-        </div>
-
-        <div class="user-profile" id="user-nav" style="display: none; align-items: center; gap: 15px;">
-            <div style="text-align: right;">
-                <span style="font-size: 14px; color: #333;">Hi, <b id="userNameDisplay" style="color: #D61C4E;">User</b></span>
+                <a href="join.html" class="signin-btn">Log In</a>
+                <a href="signin.html" class="join-btn">Sign Up</a>
             </div>
-            <img src="" alt="Profile" id="userAvatar" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #D61C4E;">
-            <button onclick="logout()" style="background:none; border:none; cursor:pointer; color:#666;"><i class="fa-solid fa-right-from-bracket"></i></button>
-        </div>
+
+            <div class="user-profile" id="user-nav" style="display: none; align-items: center; gap: 15px;">
+                <div style="text-align: right;">
+                    <span style="font-size: 14px; color: #333;">Hi, <b id="userNameDisplay" style="color: #D61C4E;">User</b></span>
+                </div>
+                <img src="" alt="Profile" id="userAvatar" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #D61C4E;">
+                <button onclick="logout()" style="background:none; border:none; cursor:pointer; color:#666;"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
     </nav>
 
     <header class="hero">
@@ -147,6 +69,7 @@
 
     <section class="about-section" id="about">
         <div class="container">
+            
             <div class="about-images">
                 <img src="cover1.jpeg" alt="Bouquet Mawar" class="img-main">
                 <img src="cover2.jpeg" alt="Florist merangkai bunga" class="img-small">
@@ -155,9 +78,15 @@
             <div class="about-content">
                 <span class="sub-title">SINCE 2022</span>
                 <h2>Crafting Feelings into <br> <span class="highlight">Beautiful Bouquets</span></h2>
+                
                 <p class="description">
-                    Selamat datang di <strong>Bouquet Bysindi</strong>. tempat di mana setiap bunga dipilih dengan sepenuh hati dan dirangkai untuk menyampaikan cerita.
+                    Selamat datang di <strong>Bouquet Bysindi</strong>. tempat di mana setiap bunga dipilih dengan sepenuh hati dan dirangkai untuk menyampaikan cerita. Kami percaya bahwa setiap tangkai bunga memiliki makna tentang cinta, kebahagiaan, harapan, dan perhatian.
                 </p>
+                
+                <p class="description">
+                    Dengan sentuhan kreativitas dan keahlian tangan profesional, kami menghadirkan rangkaian bunga segar yang elegan dan berkelas, sempurna untuk setiap momen spesial Anda. Dari hadiah sederhana hingga perayaan istimewa, kami siap membantu Anda menyampaikan perasaan melalui keindahan bunga.
+                </p>
+
                 <div class="features">
                     <div class="feature-item">
                         <i class="fa-solid fa-seedling"></i>
@@ -175,46 +104,183 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <section class="order-section" id="order">
         <div class="container-order">
+            
             <div class="section-header">
                 <span class="sub-title">EASY STEPS</span>
                 <h2>How to Order Your <span class="highlight">Bouquet</span></h2>
                 <p>Dapatkan buket impianmu dalam 4 langkah mudah.</p>
             </div>
+
             <div class="steps-grid">
+                
                 <div class="step-card">
                     <div class="step-number">01</div>
-                    <div class="icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
                     <h3>Pilih Desain</h3>
-                    <p>Cek katalog kami di website atau Instagram.</p>
+                    <p>Cek katalog kami di website atau Instagram. Pilih model, jenis bunga, dan ukuran yang kamu suka.</p>
                 </div>
+
                 <div class="step-card">
                     <div class="step-number">02</div>
-                    <div class="icon-box"><i class="fa-solid fa-pen-to-square"></i></div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
                     <h3>Isi Form Order</h3>
-                    <p>Hubungi admin dan isi detail pesanan kamu.</p>
+                    <p>Hubungi admin dan isi detail pesanan: Warna kertas (wrapping), isi kartu ucapan, dan tanggal pengiriman.</p>
                 </div>
+
                 <div class="step-card">
                     <div class="step-number">03</div>
-                    <div class="icon-box"><i class="fa-solid fa-credit-card"></i></div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
                     <h3>Pembayaran</h3>
-                    <p>Lakukan pembayaran via Transfer Bank atau E-Wallet.</p>
+                    <p>Lakukan pembayaran penuh atau DP (Down Payment) via Transfer Bank atau E-Wallet untuk memproses pesanan.</p>
                 </div>
+
                 <div class="step-card">
                     <div class="step-number">04</div>
-                    <div class="icon-box"><i class="fa-solid fa-gift"></i></div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
                     <h3>Pengiriman</h3>
-                    <p>Duduk manis! Kurir kami akan mengantar pesananmu.</p>
+                    <p>Duduk manis! Kurir kami akan mengantar buket cantikmu dengan aman ke lokasi tujuan.</p>
                 </div>
+
             </div>
+
+            <div class="order-cta">
+                <a href="https://wa.me/6289521001497?text=Halo%20kak%2C%20saya%20tertarik%20mau%20pesan%20buketnya" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+                </a>
+            </div>
+
         </div>
     </section>
 
-    <section class="testi-section" id="testi">
+   <section class="contact-section" id="contact">
+    <div class="container-contact-wrapper">
+        
+        <div class="contact-top-grid">
+            
+            <div class="contact-info">
+                <span class="sub-title">GET IN TOUCH</span>
+                <h2>Visit Our Studio</h2>
+                <p class="desc">Datang langsung ke tempat kami untuk konsultasi buket pernikahan atau hadiah spesialmu.</p>
+
+                <div class="info-items">
+                    <div class="info-box">
+                        <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>Jl. Cicantel, Mulyasari, Kec Tamansari, Kota Tasikmalaya</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+62 895-2100-1497</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="icon-circle"><i class="fa-regular fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>sindifauziah05@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.271342!2d108.2323!3d-7.3567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjEnMjQuMSJTIDEwOMKwMTMnNTYuMyJF!5e0!3m2!1sid!2sid!4v1620000000000" 
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="payment-methods">
+                <span class="sub-title">PAYMENT OPTIONS</span>
+                <h2>Payment Method</h2>
+                <p class="desc">Kami menerima pembayaran melalui transfer Bank dan E-Wallet berikut:</p>
+                
+                <div class="payment-grid">
+    <div class="pay-card">
+        <div class="pay-header">
+            <i class="fa-solid fa-university" style="color: #003899;"></i>
+            <span><b>BCA</b></span>
+        </div>
+        <p><b>0541822975</b><br><small>a/n Sindi Fauziah</small></p>
+    </div>
+
+    <div class="pay-card">
+        <div class="pay-header">
+            <i class="fa-solid fa-university" style="color: #ff6600;"></i>
+            <span><b>BNI</b></span>
+        </div>
+        <p><b>1799341727</b><br><small>a/n Sindi Fauziah</small></p>
+    </div>
+
+    <div class="pay-card">
+        <div class="pay-header">
+            <i class="fa-solid fa-building-columns" style="color: #ff5722;"></i>
+            <span><b>SeaBank</b></span>
+        </div>
+        <p><b>901544372540</b><br><small>a/n Mustahiroh</small></p>
+    </div>
+
+    <div class="pay-card">
+        <div class="pay-header">
+            <i class="fa-solid fa-wallet" style="color: #118ee1;"></i>
+            <span><b>DANA / ShopeePay</b></span>
+        </div>
+        <p><b>089521001497</b><br><small>a/n Sindi Fauziah</small></p>
+    </div>
+</div>
+            </div>
+        </div>
+
+        <div class="contact-bottom-form">
+            <div class="contact-form-wrapper">
+                <form class="contact-form" onsubmit="kirimPesanWA(event)">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h3>Send a Message</h3>
+                        <p>Punya pertanyaan khusus? Kirim pesan langsung ke tim kami.</p>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nama Lengkap</label>
+                            <input type="text" id="nama" placeholder="Contoh: Budi Santoso" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nomor WhatsApp</label>
+                            <input type="tel" id="nomor" placeholder="0812..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pesan / Request</label>
+                        <textarea id="pesan" rows="4" placeholder="Halo, saya ingin bertanya tentang..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-send">Kirim Pesan via WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <section class="testi-section" id="testi">
         <div class="container-order">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
                 <span class="sub-title">OUR REVIEWS</span>
@@ -275,119 +341,71 @@
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
-        <div class="container-contact-wrapper">
-            <div class="contact-top-grid">
-                <div class="contact-info">
-                    <span class="sub-title">GET IN TOUCH</span>
-                    <h2>Visit Our Studio</h2>
-                    <div class="info-items">
-                        <div class="info-box">
-                            <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
-                            <div>
-                                <h4>Alamat</h4>
-                                <p>Jl. Cicantel, Mulyasari, Kec Tamansari, Kota Tasikmalaya</p>
-                            </div>
-                        </div>
-                        <div class="info-box">
-                            <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
-                            <div>
-                                <h4>WhatsApp</h4>
-                                <p>+62 895-2100-1497</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.271342!2d108.2323!3d-7.3567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjEnMjQuMSJTIDEwOMKwMTMnNTYuMyJF!5e0!3m2!1sid!2sid!4v1620000000000" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
+<script>
+    // Cek Status Login saat Halaman Dimuat
+    window.onload = function() {
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+        const userName = sessionStorage.getItem('userName');
 
-                <div class="payment-methods">
-                    <span class="sub-title">PAYMENT OPTIONS</span>
-                    <h2>Payment Method</h2>
-                    <div class="payment-grid">
-                        <div class="pay-card">
-                            <div class="pay-header"><i class="fa-solid fa-university" style="color: #003899;"></i> <span><b>BCA</b></span></div>
-                            <p><b>0541822975</b><br><small>a/n Sindi Fauziah</small></p>
-                        </div>
-                        <div class="pay-card">
-                            <div class="pay-header"><i class="fa-solid fa-university" style="color: #ff6600;"></i> <span><b>BNI</b></span></div>
-                            <p><b>1799341727</b><br><small>a/n Sindi Fauziah</small></p>
-                        </div>
-                        <div class="pay-card">
-                            <div class="pay-header"><i class="fa-solid fa-wallet" style="color: #118ee1;"></i> <span><b>DANA</b></span></div>
-                            <p><b>089521001497</b><br><small>a/n Sindi Fauziah</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        const guestNav = document.getElementById('guest-nav');
+        const userNav = document.getElementById('user-nav');
+        const nameDisplay = document.getElementById('userNameDisplay');
+        const avatarDisplay = document.getElementById('userAvatar');
 
-            <div class="contact-bottom-form">
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" onsubmit="kirimPesanWA(event)">
-                        <div style="text-align: center; margin-bottom: 30px;">
-                            <h3>Send a Message</h3>
-                            <p>Punya pertanyaan? Kirim pesan langsung ke kami.</p>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Nama Lengkap</label>
-                                <input type="text" id="nama" placeholder="Contoh: Budi Santoso" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Nomor WhatsApp</label>
-                                <input type="tel" id="nomor" placeholder="0812..." required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Pesan / Request</label>
-                            <textarea id="pesan" rows="4" placeholder="Halo, saya ingin bertanya tentang..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-send">Kirim Pesan via WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        window.onload = function() {
-            const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-            const userName = sessionStorage.getItem('userName');
-            const guestNav = document.getElementById('guest-nav');
-            const userNav = document.getElementById('user-nav');
-            const nameDisplay = document.getElementById('userNameDisplay');
-            const avatarDisplay = document.getElementById('userAvatar');
-
-            if (isLoggedIn === 'true' && userName) {
-                guestNav.style.display = 'none';
-                userNav.style.display = 'flex';
-                nameDisplay.innerText = userName;
-                avatarDisplay.src = `https://ui-avatars.com/api/?name=${userName}&background=D61C4E&color=fff&rounded=true`;
-            } else {
-                guestNav.style.display = 'flex';
-                userNav.style.display = 'none';
-            }
-        };
-
-        function logout() {
-            if(confirm("Yakin ingin keluar?")) {
-                sessionStorage.clear();
-                window.location.reload();
-            }
+        if (isLoggedIn === 'true' && userName) {
+            // Jika SUDAH login
+            guestNav.style.display = 'none'; // Sembunyikan tombol daftar
+            userNav.style.display = 'flex';  // Munculkan foto profil
+            
+            nameDisplay.innerText = userName;
+            // Buat inisial foto profil otomatis
+            avatarDisplay.src = `https://ui-avatars.com/api/?name=${userName}&background=D61C4E&color=fff&rounded=true`;
+        } else {
+            // Jika BELUM login
+            guestNav.style.display = 'flex';
+            userNav.style.display = 'none';
         }
+    };
 
-        function kirimPesanWA(event) {
-            event.preventDefault();
-            const nomorAdmin = "6289521001497"; 
-            const nama = document.getElementById('nama').value;
-            const nomorUser = document.getElementById('nomor').value;
-            const pesanIsi = document.getElementById('pesan').value;
-            const teksPesan = `Halo Admin Bouquet Bysindi,%0A%0ANama: ${nama}%0AWA: ${nomorUser}%0APesan: ${pesanIsi}`;
-            window.open(`https://wa.me/${nomorAdmin}?text=${teksPesan}`, '_blank');
+    function logout() {
+        if(confirm("Yakin ingin keluar?")) {
+            sessionStorage.clear(); // Hapus data login
+            window.location.reload(); // Refresh halaman
         }
-    </script>
+    }
+
+    function kirimPesanWA(event) {
+        // Mencegah website reload saat tombol ditekan
+        event.preventDefault();
+
+        // 1. Ambil Nomor Admin (Ganti dengan nomor toko Anda, awali 62)
+        const nomorAdmin = "6289521001497"; 
+
+        // 2. Ambil data dari formulir yang diisi pelanggan
+        const nama = document.getElementById('nama').value;
+        const nomorUser = document.getElementById('nomor').value;
+        const pesanIsi = document.getElementById('pesan').value;
+
+        // 3. Susun format pesan yang rapi
+        // %0A adalah kode untuk baris baru (Enter)
+        const teksPesan = `Halo Admin Bouquet Bysindi,%0A%0A` +
+                          `Perkenalkan saya:* ${nama}%0A` +
+                          `Nomor WA saya:* ${nomorUser}%0A%0A` +
+                          `*Pesan/Request:*%0A${pesanIsi}`;
+
+        // 4. Buat Link WhatsApp API
+        const urlWA = `https://wa.me/${nomorAdmin}?text=${teksPesan}`;
+
+        // 5. Buka WhatsApp di tab baru
+        window.open(urlWA, '_blank');
+    }
+</script>
 </body>
+
 </html>
+
+
+
+
 
 
