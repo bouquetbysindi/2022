@@ -280,6 +280,11 @@
     </div>
 </section>
 
+<div id="testiModal" class="testi-modal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="imgFull">
+</div>
+    
  <section class="testi-section" id="testi">
     <div class="container-order">
         <div class="section-header" style="text-align: center; margin-bottom: 40px;">
@@ -287,48 +292,55 @@
             <h2>Happy <span class="highlight">Customers</span></h2>
             <p>Geser ke samping untuk melihat testimoni pelanggan kami</p>
         </div>
-
         <div class="testi-slider">
-            <div class="testi-card">
-                <div class="img-container">
-                    <img src="Testimoni/1.jpeg" alt="Testi 1">
-                </div>
-            </div>
-            <div class="testi-card">
-                <div class="img-container">
-                    <img src="Testimoni/2.jpeg" alt="Testi 2">
-                </div>
-            </div>
-            <div class="testi-card">
-                <div class="img-container">
-                    <img src="Testimoni/3.jpeg" alt="Testi 3">
-                </div>
-            </div>
-            <div class="testi-card">
-                <div class="img-container">
-                    <img src="Testimoni/4.jpeg" alt="Testi 4">
-                </div>
-            </div>
-            <div class="testi-card">
-                <div class="img-container">
-                    <img src="Testimoni/5.jpeg" alt="Testi 5">
-                </div>
-            </div>
-            <div class="testi-card">
-                <div class="img-container">
-                    <img src="Testimoni/6.jpeg" alt="Testi 6">
-                </div>
-            </div>
-            <div class="testi-card">
-                <div class="img-container">
-                    <img src="Testimoni/7.jpeg" alt="Testi 7">
-                </div>
-            </div>
-            <div class="testi-card">
-                <div class="img-container">
-                    <img src="Testimoni/8.jpeg" alt="Testi 8">
-                </div>
-            </div>
+    <div class="testi-card" onclick="openModal('Testimoni/1.jpeg')">
+        <div class="img-container">
+            <img src="Testimoni/1.jpeg" alt="Testi 1">
+        </div>
+    </div>
+    
+    <div class="testi-card" onclick="openModal('Testimoni/2.jpeg')">
+        <div class="img-container">
+            <img src="Testimoni/2.jpeg" alt="Testi 2">
+        </div>
+    </div>
+
+    <div class="testi-card" onclick="openModal('Testimoni/3.jpeg')">
+        <div class="img-container">
+            <img src="Testimoni/3.jpeg" alt="Testi 3">
+        </div>
+    </div>
+
+             <div class="testi-card" onclick="openModal('Testimoni/4.jpeg')">
+        <div class="img-container">
+            <img src="Testimoni/4.jpeg" alt="Testi 4">
+        </div>
+    </div>
+    
+    <div class="testi-card" onclick="openModal('Testimoni/5.jpeg')">
+        <div class="img-container">
+            <img src="Testimoni/5.jpeg" alt="Testi 5">
+        </div>
+    </div>
+
+    <div class="testi-card" onclick="openModal('Testimoni/6.jpeg')">
+        <div class="img-container">
+            <img src="Testimoni/6.jpeg" alt="Testi 6">
+        </div>
+    </div>
+
+             <div class="testi-card" onclick="openModal('Testimoni/7.jpeg')">
+        <div class="img-container">
+            <img src="Testimoni/7.jpeg" alt="Testi 7">
+        </div>
+    </div>
+
+    <div class="testi-card" onclick="openModal('Testimoni/8.jpeg')">
+        <div class="img-container">
+            <img src="Testimoni/8.jpeg" alt="Testi 8">
+        </div>
+    </div>
+    </div>
         </div>
     </div>
 </section>
@@ -391,10 +403,33 @@
         // 5. Buka WhatsApp di tab baru
         window.open(urlWA, '_blank');
     }
+
+    // Fungsi untuk membuka foto
+function openModal(imgSrc) {
+    const modal = document.getElementById("testiModal");
+    const modalImg = document.getElementById("imgFull");
+    
+    modal.style.display = "block";
+    modalImg.src = imgSrc;
+    
+    // Mencegah scroll pada background saat modal buka
+    document.body.style.overflow = "hidden";
+}
+
+// Fungsi untuk menutup foto
+function closeModal() {
+    const modal = document.getElementById("testiModal");
+    modal.style.display = "none";
+    
+    // Mengembalikan scroll
+    document.body.style.overflow = "auto";
+}
 </script>
+
 </body>
 
 </html>
+
 
 
 
