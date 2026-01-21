@@ -758,6 +758,49 @@
     }
 }
 
+/* --- CSS LIGHTBOX TESTIMONI --- */
+.testi-modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Latar hitam transparan */
+    cursor: zoom-out;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 500px; /* Batas lebar foto saat membesar */
+    border-radius: 10px;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.5); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Tambahkan kursor tangan pada kartu testimoni */
+.testi-card {
+    cursor: pointer;
+}
+
 /* Penyesuaian Responsif (Mobile) */
 @media (max-width: 900px) {
     .contact-top-grid {
@@ -913,6 +956,7 @@
     border-color: #D61C4E;
 
 }
+
 
 
 
