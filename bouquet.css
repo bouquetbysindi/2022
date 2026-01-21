@@ -759,41 +759,50 @@
 }
 
 /* --- CSS LIGHTBOX TESTIMONI --- */
+/* --- PERBAIKAN CSS MODAL ZOOM --- */
 .testi-modal {
     display: none; 
     position: fixed;
     z-index: 9999;
-    padding-top: 50px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Latar hitam transparan */
+    background-color: rgba(0, 0, 0, 0.85); /* Latar sedikit lebih terang agar elegan */
     cursor: zoom-out;
+    display: flex; /* Menggunakan flex agar gambar selalu di tengah */
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 500px; /* Batas lebar foto saat membesar */
-    border-radius: 10px;
+    width: auto; /* Biarkan lebar mengikuti ukuran asli */
+    height: auto; /* Biarkan tinggi mengikuti ukuran asli */
+    max-width: 90%; /* Maksimal lebar 90% layar */
+    max-height: 85vh; /* Maksimal tinggi 85% tinggi layar laptop */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    object-fit: contain; /* Memastikan gambar tidak gepeng */
     animation: zoomIn 0.3s ease;
 }
 
-@keyframes zoomIn {
-    from {transform: scale(0.5); opacity: 0;}
-    to {transform: scale(1); opacity: 1;}
-}
-
+/* Tombol Close */
 .close-modal {
     position: absolute;
     top: 20px;
-    right: 35px;
+    right: 30px;
     color: #fff;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+    z-index: 10000;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
 }
 
 /* Tambahkan kursor tangan pada kartu testimoni */
@@ -956,6 +965,7 @@
     border-color: #D61C4E;
 
 }
+
 
 
 
