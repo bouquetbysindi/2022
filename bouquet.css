@@ -692,6 +692,84 @@
     gap: 20px;
 }
 
+        /* CSS TAMBAHAN UNTUK TESTIMONI SCROLL */
+        .testi-section {
+            padding: 80px 0;
+            background-color: #fffafb; /* Warna soft pink sangat muda */
+            overflow: hidden;
+        }
+
+        .testi-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 5% 40px 5%;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+        }
+
+        .testi-slider::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .testi-card {
+            min-width: 280px;
+            max-width: 280px;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(214, 28, 78, 0.1);
+            scroll-snap-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .testi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(214, 28, 78, 0.2);
+        }
+
+        .testi-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .testi-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .testi-info p {
+            font-style: italic;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .testi-info b {
+            display: block;
+            margin-top: 10px;
+            color: #D61C4E;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .testi-card {
+                min-width: 250px;
+            }
+        }
+
 /* Penyesuaian Responsif (Mobile) */
 @media (max-width: 900px) {
     .contact-top-grid {
@@ -847,3 +925,4 @@
     border-color: #D61C4E;
 
 }
+
