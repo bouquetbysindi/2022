@@ -8,23 +8,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="bouquet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> //Untuk menyediakan ikon hati, wa, kartu kredit
+    <link rel="stylesheet" href="bouquet.css"> <!-- Menghubungkan ke css -->
 </head>
 <body>
 
-    <nav class="navbar">
+    <nav class="navbar"> <!-- Menampilkan menu navigasi website -->
         <a href="index.html" style="text-decoration: none;">
             <div class="logo">
                 <i class="fa-solid fa-heart"></i> Bouquet Bysindi
             </div>
-        </a>
+        </a> <!-- Menampilkan logo + ikon hati -->
 
-        <ul class="nav-links">
+        <ul class="nav-links"> <!-- Daftar menu: Home, About, Products, How to Order, Contact, Testimoni -->
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             
-            <li class="dropdown">
+            <li class="dropdown"> <!-- Menampilkan menu All Products jenis buket -->
                 <a href="Products.html" class="dropbtn">All Products <i class="fa-solid fa-caret-down"></i></a>
                 <div class="dropdown-content">
                     <a href="hemat.html">1. Hemat (10k - 30k)</a>
@@ -44,12 +44,12 @@
         </ul>
 
             
-        <div class="nav-buttons" id="guest-nav">
+        <div class="nav-buttons" id="guest-nav"> <!-- Muncul jika pengguna belum login -->
                 <a href="join.html" class="signin-btn">Log In</a>
                 <a href="signin.html" class="join-btn">Sign Up</a>
-            </div>
+        </div>
 
-            <div class="user-profile" id="user-nav" style="display: none; align-items: center; gap: 15px;">
+            <div class="user-profile" id="user-nav" style="display: none; align-items: center; gap: 15px;"> <!-- Menampilkan nama, foto avatar, dan tombol logout jika user sudah login -->
                 <div style="text-align: right;">
                     <span style="font-size: 14px; color: #333;">Hi, <b id="userNameDisplay" style="color: #D61C4E;">User</b></span>
                 </div>
@@ -58,7 +58,7 @@
             </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero"> <!-- agian pembuka website berisi: Judul utama, Deskripsi brand, Tombol Buy Your Bouquet -->
         <div class="hero-text">
             <span class="subtitle">FIND YOUR BOUQUET</span>
             <h1>Bouquet Bysindi</h1>
@@ -67,7 +67,7 @@
         </div>
     </header>
 
-    <section class="about-section" id="about">
+    <section class="about-section" id="about"> <!-- Menjelaskan profil Bouquet Bysindi, sejak berdiri, filosofi, dan keunggulan -->
         <div class="container">
             
             <div class="about-images">
@@ -108,7 +108,7 @@
         </div>
     </section>
 
-    <section class="order-section" id="order">
+    <section class="order-section" id="order"> <!-- Menjelaskan langkah pemesanan dalam 4 tahap -->
         <div class="container-order">
             
             <div class="section-header">
@@ -166,7 +166,7 @@
         </div>
     </section>
 
-   <section class="contact-section" id="contact">
+   <section class="contact-section" id="contact"> <!--Memberikan informasi kontak lengkap -->
     <div class="container-contact-wrapper">
         
         <div class="contact-top-grid">
@@ -208,7 +208,7 @@
                 </div>
             </div>
 
-            <div class="payment-methods">
+            <div class="payment-methods"> <!-- Menampilkan metode pembayaran -->
                 <span class="sub-title">PAYMENT OPTIONS</span>
                 <h2>Payment Method</h2>
                 <p class="desc">Kami menerima pembayaran melalui transfer Bank dan E-Wallet berikut:</p>
@@ -251,7 +251,7 @@
 
         <div class="contact-bottom-form">
             <div class="contact-form-wrapper">
-                <form class="contact-form" onsubmit="kirimPesanWA(event)">
+                <form class="contact-form" onsubmit="kirimPesanWA(event)"> <!-- Mengirim pesan pelanggan langsung ke WhatsApp admin -->
                     <div style="text-align: center; margin-bottom: 30px;">
                         <h3>Send a Message</h3>
                         <p>Punya pertanyaan khusus? Kirim pesan langsung ke tim kami.</p>
@@ -280,12 +280,12 @@
     </div>
 </section>
 
-<div id="testiModal" class="testi-modal" onclick="closeModal()" style="display: none;">
+<div id="testiModal" class="testi-modal" onclick="closeModal()" style="display: none;"> <!-- Menampilkan gambar testimoni dalam ukuran penuh saat diklik -->
     <span class="close-modal">&times;</span>
     <img class="modal-content" id="imgFull">
 </div>
     
- <section class="testi-section" id="testi">
+ <section class="testi-section" id="testi"> <!-- Menampilkan testimoni pelanggan dalam bentuk slider gambar -->
     <div class="container-order">
         <div class="section-header" style="text-align: center; margin-bottom: 40px;">
             <span class="sub-title">OUR REVIEWS</span>
@@ -347,7 +347,7 @@
 
 <script>
     // Cek Status Login saat Halaman Dimuat
-    window.onload = function() {
+    window.onload = function() { // Mengecek apakah user sudah login menggunakan sessionStorage
         const isLoggedIn = sessionStorage.getItem('isLoggedIn');
         const userName = sessionStorage.getItem('userName');
 
@@ -371,14 +371,14 @@
         }
     };
 
-    function logout() {
+    function logout() { // Menghapus data login dan refresh halaman
         if(confirm("Yakin ingin keluar?")) {
             sessionStorage.clear(); // Hapus data login
             window.location.reload(); // Refresh halaman
         }
     }
 
-    function kirimPesanWA(event) {
+    function kirimPesanWA(event) { // Mengambil data dari form, Menyusun pesan otomatis, Membuka WhatsApp dengan pesan siap kirim
         // Mencegah website reload saat tombol ditekan
         event.preventDefault();
 
@@ -404,7 +404,7 @@
         window.open(urlWA, '_blank');
     }
 
-    function openModal(imgSrc) {
+    function openModal(imgSrc) { // Membuka gambar testimoni fullscreen dan Menutup modal saat diklik
     const modal = document.getElementById("testiModal");
     const modalImg = document.getElementById("imgFull");
     
@@ -419,11 +419,11 @@ function closeModal() {
     modal.style.display = "none";
     document.body.style.overflow = "auto";
 }
+    
 </script>
-
 </body>
+</html> <!-- Menandai akhir dokumen HTML -->
 
-</html>
 
 
 
